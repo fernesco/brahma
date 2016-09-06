@@ -6,7 +6,7 @@
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 #
-servers = ['first','second']
+servers = ['pako','kike']
 #
 Vagrant.configure("2") do |config|
   # The most common configuration options are documented and commented below.
@@ -71,16 +71,16 @@ Vagrant.configure("2") do |config|
   #   apt-get install -y apache2
   # SHELL
   #
-  config.vm.box = "/Users/fernesco/DevOps/Vagrant/boxes/trusty-server-cloudimg-amd64-vagrant-disk1.box"
+  config.vm.box = "/Users/fernesco/DevOps/Vagrant/boxes/precise-server-cloudimg-amd64-vagrant-disk1.box"
   #config.vm.box = "hashicorp/precise64"
   servers.each do |hostname|
     config.vm.define "#{hostname}" do |box|
       box.vm.hostname ="#{hostname}.devops.ecsdg.com"
       box.vm.provider :virtualbox do |v|
-        if hostname == "first"
+        if hostname == "pako"
           #config.vm.box = "/Users/fernesco/DevOps/Vagrant/boxes/trusty-server-cloudimg-amd64-vagrant-disk1.box"
           v.memory = "512"
-        elsif hostname == "second"
+        elsif hostname == "kike"
           #config.vm.box = "/Users/fernesco/DevOps/Vagrant/boxes/precise-server-cloudimg-amd64-vagrant-disk1.box"
           v.memory = "256"
         end
