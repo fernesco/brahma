@@ -6,7 +6,7 @@
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 #
-servers = ['first','second','three']
+servers = ['first','second']
 #
 Vagrant.configure("2") do |config|
   # The most common configuration options are documented and commented below.
@@ -84,10 +84,6 @@ Vagrant.configure("2") do |config|
           #config.vm.box = "/Users/fernesco/DevOps/Vagrant/boxes/precise-server-cloudimg-amd64-vagrant-disk1.box"
           v.memory = "256"
         end
-      elsif hostname == "three"
-            #config.vm.box = "/Users/fernesco/DevOps/Vagrant/boxes/precise-server-cloudimg-amd64-vagrant-disk1.box"
-            v.memory = "384"
-          end
       end
     end
   end
